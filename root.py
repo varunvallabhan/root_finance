@@ -32,17 +32,19 @@ class Root_trips:
                             #so that the order in which trips and drivers appear doesnt matter 
             x= line.split()
             num+=1
-            if len(x)!=0:
-                if x[0].lower()=='driver' :
+            if len(x)!=0: # to avoid empty lines
+                if x[0].lower()=='driver' :  # to consider input irrespective of its case
                     Driver_list.update({x[1]:[]})
                 elif x[0].lower()=='trip':
                     Trip_details.append(x[1:])
-                else:
+                else:    # an add-on to give the line number incase of a wrong/garbage value. 
                      print 'Invalid Entry in line %d' %num      
         f.close()
-        #associating trip details to each driver while discarding trips that dont have a driver initialised
+        #associating trip details to each driver while discarding trips that don't have a driver initialised
         [Driver_list[y[0]].append(y[1:]) for y in Trip_details if y[0] in Driver_list]
         return Driver_list
+    # the abpve step can be included while scanning the file if we for sure know that the order will not defer and the driver would come before 
+    # the trip even during connection issues or improper processing.
     
     def trip_summary(self,drivers):       # calculating total distance and avg speed for each driver
         Driver_trip=[]
