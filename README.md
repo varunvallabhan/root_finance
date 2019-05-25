@@ -1,13 +1,21 @@
 # root_finance
 Root_coding_test
 
+Problem Statement-
+Given a text file, where each line of the input file starts with a command. One of the commands is Driver, which registers a new driver in the app. The second command is Trip, which will record a trip attributed to a driver.
+limiting conditions-Discard any trips that average a speed of less than 5 mph or greater than 100 mph.
+
+We have to generate a report containing each driver with total miles driven and average speed sorted by most miles driven to least. Miles and miles per hour are to be rounded to the nearest integer.
+
+TO run the code-
+
 1. download the file.
 2. In command prompt navigate to the folder where you have downloaded the file and type= python root.py your_file_name.txt(this needs to be a text file)
 It would print the summary.
 
 The logic and thought process.
 
-For the input file i tried to generalise it by adding blank line and drivers and trips being added randomly.
+For the test input file I tried to generalise it by adding blank line and drivers and trips are added randomly.
 
 To handle this stream of data where the trips can be counted no matter when they come in the file and they would be updated if there is an entry for the driver. If the driver is not present then the trip details associated with them are ignored.
 
