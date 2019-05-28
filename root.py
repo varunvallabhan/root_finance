@@ -43,7 +43,7 @@ class Root_trips:
         #associating trip details to each driver while discarding trips that don't have a driver initialised
         [Driver_list[y[0]].append(y[1:]) for y in Trip_details if y[0] in Driver_list]
         return Driver_list
-    # the abpve step can be included while scanning the file if we for sure know that the order will not defer and the driver would come before 
+    # the above step can be included while scanning the file if we for sure know that the order will not defer and the driver would come before 
     # the trip even during connection issues or improper processing.
     
     def trip_summary(self,drivers):       # calculating total distance and avg speed for each driver
